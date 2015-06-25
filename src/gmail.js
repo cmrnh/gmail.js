@@ -199,7 +199,7 @@ var Gmail = function(localJQuery) {
     }
 
     return tb;
-}
+  }
 
 
   api.check.is_inside_email = function() {
