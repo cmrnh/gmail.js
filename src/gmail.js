@@ -204,6 +204,18 @@ var Gmail = function(localJQuery) {
     return tb;
   }
 
+  api.dom.toolbar_in_thread = function() {
+    // Inside Thread: <div class="iH" gh="mtb">
+    // Inbox: <div class="Cq aqL" gh="mtb">
+
+    var tb = $("[gh='mtb'][class='iH']");
+
+    while($(tb).children().length == 1){
+      tb = $(tb).children().first();
+    }
+
+    return tb;
+  }
 
   api.check.is_inside_email = function() {
     if(api.get.current_page() != null && !api.check.is_preview_pane()) {
