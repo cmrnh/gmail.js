@@ -192,6 +192,9 @@ var Gmail = function(localJQuery) {
   }
 
   api.dom.toolbar = function() {
+    // Inside Thread: <div class="iH" gh="mtb">
+    // Inbox: <div class="Cq aqL" gh="mtb">
+
     var tb = $("[gh='mtb']");
 
     while($(tb).children().length == 1){
