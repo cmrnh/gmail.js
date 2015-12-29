@@ -20,7 +20,7 @@
 
 - **[Signal](https://trysignal.com)** - Edit your inbox!
 - **[Gmail Hacks](https://chrome.google.com/webstore/detail/gmail-hacks/aacloklpepaibhlikiakfcgjjappeppo)** by [@arpitnext](https://github.com/arpitnext) (*[Source](https://github.com/arpitnext/play_with_gmail.js)*)
-
+- **[Example to use gmail.js in firefox addon](https://github.com/rinkudas/gmail-firefox-addon-boilerplate)** - It provides basic functionality to inject gmail.js within gmail for using it in a Firefox addon.
 
 ## Content Security Policy
 
@@ -439,8 +439,8 @@ Returns current user's file storage stats
 Returns what page of gmail the user is currently on. These are the possible responses
 
 ```js
-['sent', 'inbox', 'starred', 'drafts', 'imp', 'chats', 'all', 'spam', 'trash', 'settings'] // pages
-null // inside email conversation
+['sent', 'inbox', 'starred', 'drafts', 'imp', 'chats', 'all', 'spam', 'trash', 'circle'] // pages
+"email" // inside email conversation
 "/search/[.+]" // inside search view
 "/label/[.+]" // inside label view
 "/category/[.+]" // inside category view
@@ -1008,9 +1008,6 @@ gmail.observe.on('compose_email_select', function(match) {
 
 An object used to abstract interation with a compose popup
 
-```js
-
-```
 
 ### gmail.dom.email(email_el or email_id)
 
@@ -1019,6 +1016,7 @@ An object for interacting with an email currently present in the DOM. Represents
 Expects a jQuery DOM element for the email div (div.adn as returned by the ``view_email`` observer), or an email_id
 
 - **.id** - property storing the id of the email
+- **.email_id()** - draft id of the email
 - **.body([body])** - allows get/set the html body in the DOM
 - **.to([to_array])** - allows retrieve or updating to/from DOM who the email is addressed to
 - **.from([email_address],[name])** - allows get/set who the email is from in the DOM
